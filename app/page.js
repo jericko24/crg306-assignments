@@ -5,6 +5,7 @@ export default function Home() {
     <main>
       <header>CPRG 306: Web Development 2 - Assignments</header>
       <Link href="http://localhost:3000/week-2" target="blank">Week 2</Link>
+      <Link href="http://localhost:3000/week-3" target="blank">Week 3</Link>
     </main>
   );
 }
