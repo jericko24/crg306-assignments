@@ -1,10 +1,11 @@
 "use client";
 import { useState } from "react";
 
-export function NewItem({ onAddItem }) {
+export function NewItem( { onAddItem }) {
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [category, setCategory] = useState("Produce");
+
     
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -14,7 +15,7 @@ export function NewItem({ onAddItem }) {
             return;
         }
 
-        const newItem = { id, name, quantity, category };
+        const newItem = { id:Math.random().toString(36).substring(2,9), name, quantity, category };
         onAddItem(newItem); 
         console.log(newItem);
 
@@ -65,7 +66,7 @@ export function NewItem({ onAddItem }) {
                             </label>
                         </div>
                         <div>
-                            <button onClick={handleSubmit}
+                            <button type="submit"
                             className="button bg-slate-300 text-black border border-gray-300 rounded-md p-2 mt-1 w-full hover:bg-white">
                                 Submit
                             </button>

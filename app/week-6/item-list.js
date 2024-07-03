@@ -7,14 +7,14 @@ import { useState } from "react";
 export function ItemList({ items }) {
     const [sortBy, setSortBy] = useState('name');
     
-    // const itemsArray = [...itemsData].sort((a, b) => {
-    //     if (sortBy === 'name') {
-    //         return a.name.localeCompare(b.name);
-    //     } else if (sortBy === 'category'){ 
-    //         return a.category.localeCompare(b.category);
-    //     }
-    //     return 0;
-    // });
+    const itemsArray = [...items].sort((a, b) => {
+        if (sortBy === 'name') {
+            return a.name.localeCompare(b.name);
+        } else if (sortBy === 'category'){ 
+            return a.category.localeCompare(b.category);
+        }
+        return 0;
+    });
 
     
 
