@@ -3,7 +3,6 @@ import { useState } from "react";
 
 
 export function NewItem({ onAddItem }) {
-    // const [id, setId] = useState(randomIdGenerator());
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [category, setCategory] = useState("Produce");
