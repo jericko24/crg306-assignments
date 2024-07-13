@@ -41,7 +41,7 @@ export function NewItem({ onAddItem }) {
         <main class="flex flex-col items-center justify-center min-h-screen">
             <div>
                 <div class="flex flex-col items-center bg-slate-600 p-8 rounded-lg w-full max-w-md">
-                    <form class="flex flex-col space-y-4">
+                    <form class="flex flex-col space-y-4" onSubmit={handleSubmit}>
                         <div>
                             <label>
                                 <input required type="text" value={name} onChange={(event) => setName(event.target.value)}
@@ -77,7 +77,7 @@ export function NewItem({ onAddItem }) {
                             </label>
                         </div>
                         <div>
-                            <button onClick={handleSubmit}
+                            <button type="submit"
                             className="button bg-slate-300 text-black border border-gray-300 rounded-md p-2 mt-1 w-full hover:bg-white">
                                 Submit
                             </button>
