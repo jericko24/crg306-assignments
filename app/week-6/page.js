@@ -19,7 +19,7 @@ export default function Page() {
                 <h1>Shopping List</h1>
             </header>
             <NewItem onAddItem={addItem}/>
-            <ItemList items={items}/>
+            { items && <ItemList items={items}/> }
         </main>
     );
 }

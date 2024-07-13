@@ -1,24 +1,36 @@
 "use client";
 import { useState } from "react";
 
+
 export function NewItem({ onAddItem }) {
+    // const [id, setId] = useState(randomIdGenerator());
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [category, setCategory] = useState("Produce");
+
+
+    const randomIdGenerator = () => {
+        const char = 'abcedefghijABCDEFGHI0123456789';
+        let randomId = '';
+        for (let i = 0;i < 18; i++) {
+            randomId += char.charAt(Math.floor(Math.random() * char.length));
+        }
+        return randomId;
+    };
     
     const handleSubmit = (event) => {
         event.preventDefault();
 
         if(name === "") {
-            onAddItem("Name cannot be empty.");
+            alert("Name cannot be empty.");
             return;
         }
 
-        const newItem = { id, name, quantity, category };
+        const newItem = { id:randomIdGenerator(), name, quantity, category };
         onAddItem(newItem); 
         console.log(newItem);
 
-        onAddItem(`Name: ${name}, Quantity: ${quantity}, Category: ${category} has been added to the list.`);
+        alert(`Name: ${name}, Quantity: ${quantity}, Category: ${category} has been added to the list.`);
 
         setName("");
         setQuantity(1);
