@@ -76,7 +76,7 @@ export function NewItem({ onAddItem }) {
                             </label>
                         </div>
                         <div>
-                            <button type="submit"
+                            <button type="submit" onSubmit={handleSubmit}
                             className="button bg-slate-300 text-black border border-gray-300 rounded-md p-2 mt-1 w-full hover:bg-white">
                                 Submit
                             </button>
