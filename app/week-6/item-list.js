@@ -3,7 +3,6 @@
 import { Item } from "./item.js";
 import { useState } from "react";
 
-
 export function ItemList({ items }) {
     const [sortBy, setSortBy] = useState('name');
     
