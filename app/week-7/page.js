@@ -6,6 +6,7 @@ import itemsData from './items.json';
 import { MealIdeas } from './meal-ideas.js';
 import { useState } from 'react';
 
+//TODO Debug creation of new items from items.json
 
 export default function Page() {
     const [items, setItems] = useState(itemsData);
@@ -16,7 +17,9 @@ export default function Page() {
     }
 
     const handleItemSelect = (item) => {
+        console.log("Selected item:", item);
         setSelectedItemName(item.name);
+        console.log("Selected item name:", selectedItemName);
     }
 
     return (
@@ -26,7 +29,7 @@ export default function Page() {
             </header>
             <div className= "flex">
             <NewItem onAddItem={addItem}/>
-            { items && <ItemList items={items} onItemSelect={handleItemSelect}/> }
+            <ItemList items={items} onItemSelect={handleItemSelect}/>
             <MealIdeas ingredient={selectedItemName} />
             </div>
         </main>

@@ -37,10 +37,10 @@ export function NewItem({ onAddItem }) {
     }
 
     return (
-        <main class="items-center justify-center min-h-screen">
+        <main className="items-center justify-center min-h-screen">
             <div>
-                <div class="flex flex-col items-center bg-slate-600 p-8 rounded-lg w-full max-w-md">
-                    <form class="flex flex-col space-y-4" onSubmit={handleSubmit}>
+                <div className="flex flex-col items-center bg-slate-600 p-8 rounded-lg w-full max-w-md">
+                    <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
                         <div>
                             <label>
                                 <input required type="text" value={name} onChange={(event) => setName(event.target.value)}

@@ -34,9 +34,12 @@ export function ItemList({ items, onItemSelect }) {
         </div>
         <div>
             <ul>
-            {itemsArray.map((item) => (
-                item && <Item key={item.id} {...item} onSelect={()=>onItemSelect(item)} />
-            ))}
+                {itemsArray.map((item) => (
+                    item && <Item key={item.id} {...item} onSelect={()=> {
+                        console.log("Item clicked:", item);
+                        onItemSelect(item)
+                    }}/>
+                ))}
             </ul>
         </div>
     </>
