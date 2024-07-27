@@ -25,6 +25,9 @@ export default function Home() {
       <div>
         <Link href="http://localhost:3000/week-8" target="blank">Week 8</Link>
       </div>
+      <div>
+        <Link href="http://localhost:3000/week-9" target="blank">Week 9</Link>
+      </div>
     </main>
   );
 }
