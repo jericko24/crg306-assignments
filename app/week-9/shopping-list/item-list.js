@@ -17,30 +17,32 @@ export function ItemList({ items, onItemSelect }) {
 
     return (
     <>
-        <div className="p-4 space-x-4">
-            Sort By:
-            <div className="mb-4 space-x-2 px-2">
-                <button 
-                onClick={() => setSortBy('name')}
-                className={`px-4 py-2 rounded ${sortBy==='name' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'}`}
-                >Sort by Name</button>
+        <div className="flex flex-col items-center w-full max-w-md mx-auto bg-white shadow-md rounded-lg p-4">
+            <div className="w-full mb-4">
+                <div className="flex items-center space-x-4">
+                    <span className="font-bold text-slate-600">Sort By:</span>
+                    <div className="flex space-x-2">
+                        <button 
+                        onClick={() => setSortBy('name')}
+                        className={`px-4 py-2 rounded ${sortBy === 'name' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'} hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-300`}
+                        >Sort by Name</button>
+                        <button 
+                        onClick={() => setSortBy('category')}
+                        className={`px-4 py-2 rounded ${sortBy==='category' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'} hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-300`}
+                        >Sort by Category</button>
+                    </div>
+                </div>
             </div>
-            <div className="mb-4 space-x-2">
-                <button 
-                onClick={() => setSortBy('category')}
-                className={`px-4 py-2 rounded ${sortBy==='category' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'}`}
-                >Sort by Category</button>
+            <div>
+                <ul className="w-full">
+                    {itemsArray.map((item) => (
+                        item && <Item key={item.id} {...item} onSelect={()=> {
+                            console.log("Item clicked:", item);
+                            onItemSelect(item)
+                        }}/>
+                    ))}
+                </ul>
             </div>
-        </div>
-        <div>
-            <ul>
-                {itemsArray.map((item) => (
-                    item && <Item key={item.id} {...item} onSelect={()=> {
-                        console.log("Item clicked:", item);
-                        onItemSelect(item)
-                    }}/>
-                ))}
-            </ul>
         </div>
     </>
     );

@@ -48,14 +48,20 @@ export default function Page() {
     }
 
     return (
-        <main className='text-2xl px-5 py-5 bg-slate-400'>
-            <header className='font-bold border px-5 py-5 bg-slate-600'>
+        <main className='min-h-screen bg-gray-100'>
+            <header className='bg-slate-600 text-white text-2xl font-bold py-4 px-6'>
                 <h1>Shopping List</h1>
             </header>
-            <div className= "flex">
-            <NewItem onAddItem={handleAddItem}/>
-            <ItemList items={items} onItemSelect={handleItemSelect}/>
-            <MealIdeas ingredient={selectedItemName} />
+            <div className="flex space-x-4">
+                <div className="h-80 px-4 py-4 ">
+                    <NewItem onAddItem={handleAddItem} />
+                </div>
+                <div className="h-90 px-4 py-4 overflow-auto">
+                    <ItemList items={items} onItemSelect={handleItemSelect} />
+                </div>
+                <div className="h-90 px-4 py-4 overflow-auto">
+                <MealIdeas ingredient={selectedItemName} />
+                </div>
             </div>
         </main>
     );

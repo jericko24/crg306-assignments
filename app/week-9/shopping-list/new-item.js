@@ -37,54 +37,50 @@ export function NewItem({ onAddItem }) {
     }
 
     return (
-        <main className="items-center justify-center min-h-screen">
-            <div>
-                <div className="flex flex-col items-center bg-slate-600 p-8 rounded-lg w-full max-w-md">
-                    <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
-                        <div>
-                            <label>
-                                <input required type="text" value={name} onChange={(event) => setName(event.target.value)}
-                                className="input-field bg-white text-black border border-gray-300 rounded-md p-2 mt-1 w-full"
-                                placeholder="Input Name"/>
-                            </label>
-                        </div>
-                        <div>
-                            <label>
-                                Quantity:
-                                <input required type="number" min={1} max={99} value={quantity} onChange={(event) => setQuantity(event.target.value)}
-                                className="number-field bg-white text-black border border-gray-300 rounded-md p-2 mt-1 w-full"
-                                />
-                            </label>
-                        </div>
-                        <div>
-                            <label>
-                                Category:
-                                <select required value={category} onChange={(event) => setCategory(event.target.value)}
-                                className="number-field bg-white text-black border border-gray-300 rounded-md p-2 mt-1 w-full">
-                                    <option value="Produce">Produce</option>
-                                    <option value="Dairy">Dairy</option>
-                                    <option value="Bakery">Bakery</option>
-                                    <option value="Meat">Meat</option>
-                                    <option value="Frozen Foods">Frozen Foods</option>
-                                    <option value="Canned goods">Canned goods</option>
-                                    <option value="Dry goods">Dry goods</option>
-                                    <option value="Beverages">Beverages</option>
-                                    <option value="Snacks">Snacks</option>
-                                    <option value="Household">Household</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                            </label>
-                        </div>
-                        <div>
-                            <button type="submit" onSubmit={handleSubmit}
-                            className="button bg-slate-300 text-black border border-gray-300 rounded-md p-2 mt-1 w-full hover:bg-white">
-                                Submit
-                            </button>
-                        </div>
-                    </form>
+        <div className="flex justify-center items-center w-full max-w-md mx-auto bg-white shadow-md rounded-lg p-4">
+            <form className="flex flex-col space-y-4 w-full" onSubmit={handleSubmit}>
+                <div>
+                    <label>
+                        <input required type="text" value={name} onChange={(event) => setName(event.target.value)}
+                        className="bg-white text-black border border-gray-300 rounded-md p-2 w-full"
+                        placeholder="Input Name"/>
+                    </label>
                 </div>
-            </div>
-        </main>
+                <div>
+                    <label>
+                        Quantity:
+                        <input required type="number" min={1} max={99} value={quantity} onChange={(event) => setQuantity(event.target.value)}
+                        className="bg-white text-black border border-gray-300 rounded-md p-2 w-full"
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Category:
+                        <select required value={category} onChange={(event) => setCategory(event.target.value)}
+                        className="bg-white text-black border border-gray-300 rounded-md p-2 w-full">
+                            <option value="Produce">Produce</option>
+                            <option value="Dairy">Dairy</option>
+                            <option value="Bakery">Bakery</option>
+                            <option value="Meat">Meat</option>
+                            <option value="Frozen Foods">Frozen Foods</option>
+                            <option value="Canned goods">Canned goods</option>
+                            <option value="Dry goods">Dry goods</option>
+                            <option value="Beverages">Beverages</option>
+                            <option value="Snacks">Snacks</option>
+                            <option value="Household">Household</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <button type="submit" onSubmit={handleSubmit}
+                    className="bg-blue-500 text-white border border-gray-300 rounded-md p-2 w-full hover:bg-blue-600">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
     );
 }
 
